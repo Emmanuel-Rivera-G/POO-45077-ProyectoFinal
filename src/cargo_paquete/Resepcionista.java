@@ -1,4 +1,4 @@
-package primer_avance;
+package cargo_paquete;
 
 public class Resepcionista extends Cargo {
 

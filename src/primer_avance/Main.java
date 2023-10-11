@@ -1,5 +1,10 @@
 package primer_avance;
 
+import comprobante_paquete.BoletaVenta;
+import producto_paquete.Bebida;
+import producto_paquete.Comida;
+import usuario_paquete.Cliente;
+
 public class Main {
 
 	public static void main(String[] args) {
@@ -8,7 +13,7 @@ public class Main {
   
 		Pedido pedido1 = new Pedido(001,"2023-09-12","15.00","En proceso",150.00);
   
-		Bebida cafe = new Bebida("Café", 15.00,"","00102","","Caliente",10.0);
+		Bebida cafe = new Bebida("Cafï¿½", 15.00,"","00102","","Caliente",10.0);
   
 		Comida croissant = new Comida("Croissant", 4.00,"","000101","","Pastel",5.0);
   

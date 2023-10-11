@@ -1,14 +1,14 @@
-package primer_avance;
+package usuario_paquete;
 import java.util.*;
-public abstract class Persona {
-    public Persona() {
+public abstract class Usuario {
+    public Usuario() {
     }
     protected String nombre;
     protected String apellido;
     protected String telefono;
     protected String direccion;
     protected String correo;
-	public Persona(String nombre, String apellido, String telefono, String direccion, String correo) {
+	public Usuario(String nombre, String apellido, String telefono, String direccion, String correo) {
 		super();
 		this.nombre = nombre;
 		this.apellido = apellido;

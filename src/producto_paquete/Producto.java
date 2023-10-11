@@ -1,4 +1,4 @@
-package primer_avance;
+package producto_paquete;
 public abstract class Producto {
     public Producto() {
     }

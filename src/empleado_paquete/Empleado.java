@@ -1,8 +1,10 @@
-package primer_avance;
+package empleado_paquete;
 
 import java.util.ArrayList;
 
-public class Empleado extends Persona {
+import usuario_paquete.Usuario;
+
+public class Empleado extends Usuario {
 	protected double cod_empleado;
 	protected String tipo;
 	protected String turno;

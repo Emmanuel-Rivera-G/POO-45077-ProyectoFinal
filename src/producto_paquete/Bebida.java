@@ -1,4 +1,4 @@
-package primer_avance;
+package producto_paquete;
 import java.util.*;
 
 public class Bebida extends Producto {

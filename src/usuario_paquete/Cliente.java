@@ -1,7 +1,7 @@
-package primer_avance;
+package usuario_paquete;
 import java.util.*;
 
-public class Cliente extends Persona {
+public class Cliente extends Usuario {
 
     private String dni;
     private double vecesConsumo;
