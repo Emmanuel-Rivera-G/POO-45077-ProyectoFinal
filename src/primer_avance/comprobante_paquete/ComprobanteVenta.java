@@ -1,4 +1,4 @@
-package comprobante_paquete;
+package primer_avance.comprobante_paquete;
 
 public abstract class ComprobanteVenta {
 

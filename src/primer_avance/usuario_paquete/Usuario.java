@@ -1,4 +1,4 @@
-package usuario_paquete;
+package primer_avance.usuario_paquete;
 import java.util.*;
 public abstract class Usuario {
     public Usuario() {

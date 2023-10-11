@@ -1,9 +1,8 @@
 package primer_avance;
 
-import comprobante_paquete.BoletaVenta;
-import producto_paquete.Bebida;
-import producto_paquete.Comida;
-import usuario_paquete.Cliente;
+import primer_avance.comprobante_paquete.*;
+import primer_avance.usuario_paquete.*;
+import producto_paquete.*;
 
 public class Main {
 
