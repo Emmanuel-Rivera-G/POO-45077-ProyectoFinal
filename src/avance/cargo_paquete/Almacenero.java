@@ -1,4 +1,4 @@
-package primer_avance.cargo_paquete;
+package avance.cargo_paquete;
 
 public class Almacenero extends Cargo {
 

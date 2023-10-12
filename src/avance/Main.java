@@ -1,8 +1,8 @@
-package primer_avance;
+package avance;
 
-import primer_avance.comprobante_paquete.*;
-import primer_avance.usuario_paquete.*;
-import producto_paquete.*;
+import avance.comprobante_paquete.*;
+import avance.producto_paquete.*;
+import avance.usuario_paquete.*;
 
 public class Main {
 

@@ -1,4 +1,4 @@
-package primer_avance.usuario_paquete;
+package avance.usuario_paquete;
 import java.util.*;
 
 public class Cliente extends Usuario {

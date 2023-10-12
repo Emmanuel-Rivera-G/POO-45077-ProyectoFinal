@@ -1,4 +1,4 @@
-package primer_avance.comprobante_paquete;
+package avance.comprobante_paquete;
 
 public class FacturaVenta extends ComprobanteVenta {
 

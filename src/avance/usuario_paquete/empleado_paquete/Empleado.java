@@ -1,9 +1,9 @@
-package primer_avance.usuario_paquete.empleado_paquete;
+package avance.usuario_paquete.empleado_paquete;
 
 import java.util.ArrayList;
 
-import primer_avance.cargo_paquete.Cargo;
-import primer_avance.usuario_paquete.Usuario;
+import avance.cargo_paquete.Cargo;
+import avance.usuario_paquete.Usuario;
 
 public class Empleado extends Usuario {
 	protected double cod_empleado;

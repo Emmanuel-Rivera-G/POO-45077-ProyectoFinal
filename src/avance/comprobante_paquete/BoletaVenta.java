@@ -1,4 +1,4 @@
-package primer_avance.comprobante_paquete;
+package avance.comprobante_paquete;
 import java.util.*;
 
 public class BoletaVenta extends ComprobanteVenta {

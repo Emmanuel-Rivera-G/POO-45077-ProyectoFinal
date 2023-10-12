@@ -1,4 +1,4 @@
-package primer_avance;
+package avance;
 
 import java.util.Date;
 
