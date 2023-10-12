@@ -1,20 +1,28 @@
-package primer_avance;
+package avance.usuario_paquete;
 import java.util.*;
-public abstract class Persona {
-    public Persona() {
+public abstract class Usuario {
+    public Usuario() {
     }
+    protected String dni;
     protected String nombre;
-    protected String apellido;
+    protected String apellidoMaterno;
+    protected String apellidoPaterno;
     protected String telefono;
     protected String direccion;
     protected String correo;
-	public Persona(String nombre, String apellido, String telefono, String direccion, String correo) {
+	public Usuario(String nombre, String apellido, String telefono, String direccion, String correo) {
 		super();
 		this.nombre = nombre;
-		this.apellido = apellido;
+		this.apellidoMaterno = apellido;
 		this.telefono = telefono;
 		this.direccion = direccion;
 		this.correo = correo;
+	}
+	public String getDni() {
+		return dni;
+	}
+	public void setDni(String dni) {
+		this.dni = dni;
 	}
 	public String getNombre() {
 		return nombre;
@@ -22,11 +30,17 @@ public abstract class Persona {
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
-	public String getApellido() {
-		return apellido;
+	public String getApellidoMaterno() {
+		return apellidoMaterno;
 	}
-	public void setApellido(String apellido) {
-		this.apellido = apellido;
+	public void setApellidoMaterno(String apellido) {
+		this.apellidoMaterno = apellido;
+	}
+	public String getApellidoPaterno() {
+		return apellidoPaterno;
+	}
+	public void setApellidoPaterno(String apellidoPaterno) {
+		this.apellidoPaterno = apellidoPaterno;
 	}
 	public String getTelefono() {
 		return telefono;
@@ -48,7 +62,7 @@ public abstract class Persona {
 	}
 	@Override
 	public String toString() {
-		return "Persona [nombre=" + nombre + ", apellido=" + apellido + ", telefono=" + telefono + ", direccion="
+		return "Persona [nombre=" + nombre + ", apellido=" + apellidoMaterno + ", telefono=" + telefono + ", direccion="
 				+ direccion + ", correo=" + correo + "]";
 	}
     

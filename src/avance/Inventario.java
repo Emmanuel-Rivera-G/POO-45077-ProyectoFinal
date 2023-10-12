@@ -1,4 +1,4 @@
-package primer_avance;
+package avance;
 
 public class Inventario {
 
