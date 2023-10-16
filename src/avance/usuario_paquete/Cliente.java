@@ -1,10 +1,13 @@
 package avance.usuario_paquete;
 import java.util.*;
 
+import avance.Pedido;
+
 public class Cliente extends Usuario {
 
     private String dni;
     private double vecesConsumo;
+    private Pedido pedidos[];
     
     public Cliente() {
         
@@ -32,7 +35,15 @@ public class Cliente extends Usuario {
         this.vecesConsumo = vecesConsumo;
     }
 
-    @Override
+    public Pedido[] getPedidos() {
+		return pedidos;
+	}
+
+	public void setPedidos(Pedido[] pedidos) {
+		this.pedidos = pedidos;
+	}
+
+	@Override
     public String toString() {
         return super.toString()+ "Cliente [dni=" + dni + ", vecesConsumo=" + vecesConsumo + "]";
     }        

@@ -2,11 +2,14 @@ package avance;
 
 import java.util.ArrayList;
 
+import avance.producto_paquete.Producto;
+
 public class Mesa {
     
     private int numeroMesa;
     private int capasidad;
     private boolean estado;
+    private Producto productos[];
     
     public Mesa() {
     }
@@ -29,7 +32,13 @@ public class Mesa {
 	public void setEstado(boolean estado) {
 		this.estado = estado;
 	}
-    //CONSTUCTOR
+    public Producto[] getProductos() {
+		return productos;
+	}
+	public void setProductos(Producto[] productos) {
+		this.productos = productos;
+	}
+	//CONSTUCTOR
 	public Mesa(int numeroMesa, int capasidad, boolean estado) {
 		super();
 		this.numeroMesa = numeroMesa;

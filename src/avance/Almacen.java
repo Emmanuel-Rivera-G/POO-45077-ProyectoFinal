@@ -1,12 +1,12 @@
 package avance;
 
-public class Inventario {
+public class Almacen {
 
     private int cantidad;
     private String fechaResepcio;
     private String fechaVencimiento;
     
-	public Inventario(int cantidad, String fechaResepcio, String fechaVencimiento) {
+	public Almacen(int cantidad, String fechaResepcio, String fechaVencimiento) {
 		super();
 		this.cantidad = cantidad;
 		this.fechaResepcio = fechaResepcio;
