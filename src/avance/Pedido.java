@@ -83,6 +83,11 @@ public class Pedido {
 		this.estadoPedido = estadoPedido;
 		this.total = total;
 	}
+
+ public Pedido(int n) {
+  this.mesa = new Mesa(n);
+}
+
 	//TOSTRING
 	@Override
 	public String toString() {
