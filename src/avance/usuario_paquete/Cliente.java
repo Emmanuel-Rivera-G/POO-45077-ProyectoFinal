@@ -7,7 +7,7 @@ public class Cliente extends Usuario {
 
     private String dni;
     private double vecesConsumo;
-    private Pedido pedidos[];
+    private ArrayList<Pedido> pedidos;
     
     public Cliente() {
         
@@ -35,12 +35,18 @@ public class Cliente extends Usuario {
         this.vecesConsumo = vecesConsumo;
     }
 
-    public Pedido[] getPedidos() {
+    public ArrayList<Pedido> getPedidos() {
 		return pedidos;
 	}
 
-	public void setPedidos(Pedido[] pedidos) {
+	public void setPedidos(ArrayList<Pedido> pedidos) {
 		this.pedidos = pedidos;
+	}
+	
+	public void generarPedido() {
+		System.out.println("Ingrese los productos comprados: ");
+		Scanner sc = new Scanner(System.in);
+		sc.next();
 	}
 
 	@Override
