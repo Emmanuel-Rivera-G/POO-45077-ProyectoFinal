@@ -7,7 +7,8 @@ public class Cliente extends Usuario {
 
     private String dni;
     private double vecesConsumo;
-    private Pedido pedidos[];
+    private ArrayList<Pedido> pedidos;
+    private final Scanner SC = new Scanner(Sustem.in);
     
     public Cliente() {
         
@@ -35,13 +36,19 @@ public class Cliente extends Usuario {
         this.vecesConsumo = vecesConsumo;
     }
 
-    public Pedido[] getPedidos() {
+    public ArrayList<Pedido> getPedidos() {
 		return pedidos;
 	}
 
-	public void setPedidos(Pedido[] pedidos) {
+	public void setPedidos(ArrayList<Pedido> pedidos) {
 		this.pedidos = pedidos;
 	}
+
+ public void regustraPedido() {
+  System.out.println("Ingresé el número de mesa");
+  Pedido pedido = new Pedido(SC.next());
+  ArrayList<Producto> productos = pedido.getMesa().gerProductos();
+}
 
 	@Override
     public String toString() {
