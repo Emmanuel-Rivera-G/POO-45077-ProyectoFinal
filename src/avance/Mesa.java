@@ -10,6 +10,7 @@ public class Mesa {
     private int capasidad;
     private boolean estado;
     private Producto productos[];
+    private final Scanner SC = new Scanner(System.in);
     
     public Mesa() {
     }
@@ -45,6 +46,18 @@ public class Mesa {
 		this.capasidad = capasidad;
 		this.estado = estado;
 	}
+ public Mesa(int numeroMesa) {
+  
+}
+
+ public void regustraProductos() {
+  int i = 0;
+  String s = "";
+  while(s != "Fin" || s != "fin") {
+   System.out.println("Ingresé el producto N°" + ++i "\nIngrese Fin para a acabar");
+   SC.next();
+  }
+}
 	//TOSTRING
 	@Override
 	public String toString() {
