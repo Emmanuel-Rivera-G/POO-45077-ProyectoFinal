@@ -1,10 +1,13 @@
 package avance;
 
+import avance.producto_paquete.Producto;
+
 public class Almacen {
 
     private int cantidad;
     private String fechaResepcio;
     private String fechaVencimiento;
+    private Producto productos[];
     
 	public Almacen(int cantidad, String fechaResepcio, String fechaVencimiento) {
 		super();
@@ -37,6 +40,14 @@ public class Almacen {
 		this.fechaVencimiento = fechaVencimiento;
 	}
     
+	public Producto[] getProductos() {
+		return productos;
+	}
+
+	public void setProductos(Producto[] productos) {
+		this.productos = productos;
+	}
+
 	@Override
 	public String toString() {
 		return "";

@@ -1,6 +1,6 @@
 package avance;
 
-import java.util.ArrayList;
+import java.util.*;
 
 import avance.producto_paquete.Producto;
 
@@ -9,7 +9,8 @@ public class Mesa {
     private int numeroMesa;
     private int capasidad;
     private boolean estado;
-    private Producto productos[];
+    private ArrayList<Producto> productos;
+    private final Scanner SC = new Scanner(System.in);
     
     public Mesa() {
     }
@@ -32,10 +33,10 @@ public class Mesa {
 	public void setEstado(boolean estado) {
 		this.estado = estado;
 	}
-    public Producto[] getProductos() {
+    public ArrayList<Producto> getProductos() {
 		return productos;
 	}
-	public void setProductos(Producto[] productos) {
+	public void setProductos(ArrayList<Producto> productos) {
 		this.productos = productos;
 	}
 	//CONSTUCTOR
@@ -44,6 +45,23 @@ public class Mesa {
 		this.numeroMesa = numeroMesa;
 		this.capasidad = capasidad;
 		this.estado = estado;
+	}
+	public Mesa(int numeroMesa) {
+	  this.numeroMesa = numeroMesa;
+	}
+
+	public void registrarProductos() {
+		int i = 0;
+		String nomPro = "";
+		
+		
+		do {
+			if (i == 0) {System.out.println("Registro de productos: ");}
+			
+			System.out.println("Ingrese el producto número " + ++i + " : ");
+			nomPro = SC.next();
+			
+		} while(i < 5);
 	}
 	//TOSTRING
 	@Override
