@@ -11,6 +11,10 @@ public class Comida extends Producto {
 	public Comida() {
 
 	}
+	
+	public Comida(String nombre) {
+		this.nombre = nombre;
+	}
 
 	public Comida(String nombre, double precio, String descripcion, String codigo, String ingredientes,
 			String tipoComida, double tiempoPreparacion) {

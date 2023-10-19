@@ -1,9 +1,15 @@
 package avance;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.Scanner;
+
 import avance.cargo_paquete.Cajero;
 import avance.comprobante_paquete.ComprobanteVenta;
+import avance.producto_paquete.Bebida;
+import avance.producto_paquete.Comida;
+import avance.producto_paquete.Producto;
 import avance.usuario_paquete.Cliente;
 import avance.usuario_paquete.Usuario;
 
@@ -19,10 +25,70 @@ public class Pedido {
     private Usuario cajero;
     private Mesa mesa;
     private ComprobanteVenta comprobante;
+    private ArrayList<Producto> productos;
+    private final Scanner SC = new Scanner(System.in);
+    
+	
+	public Pedido(int numeroPedido, int numMesa) {
+		LocalDateTime ahora = LocalDateTime.now();
+		this.numeroPedido = numeroPedido;
+		this.fecha = String.valueOf(ahora.getDayOfMonth()) + "-" + String.valueOf(ahora.getMonthValue()) + "-" + String.valueOf(ahora.getYear());
+		this.hora = String.valueOf(ahora.getHour()) + ":" + String.valueOf(ahora.getMinute()) + ":" + String.valueOf(ahora.getSecond());
+		this.estadoPedido = "En proceso";
+		this.total = 0;
+		this.cajero = null;
+		this.cliente = new Cliente();
+		this.mesa = new Mesa(numMesa);
+		
+	}
+	
+	public void registrarProductos() {
+		int i = 0;
+		String nomPro = "", tipo = "";
+		Producto p = null;
+		
+		do {
+			if (i == 0) {System.out.println("Registro de productos: ");}
+			
+			System.out.println("Ingrese el producto número " + ++i + " : ");
+			nomPro = SC.next();
+			System.out.println("Ingrese si es bebida o comida: ");
+			tipo = SC.next();
+			try {
+				switch (tipo) {
+				case "Bebida" : {
+					p = new Bebida(nomPro);
+				}
+				case "Comida" : {
+					p = new Comida(nomPro);
+				}
+				default:
+					throw new IllegalArgumentException("Valor no permitido: " + tipo);
+				}
+			} catch (Exception e) {
+				
+			} finally {
+				productos.add(p);
+			}
+		} while(i < 5);
+	}
+    
     //METODOS GET & SET
 	public int getNumeroPedido() {
 		return numeroPedido;
 	}
+	public ArrayList<Producto> getProductos() {
+		return productos;
+	}
+
+	public void setProductos(ArrayList<Producto> productos) {
+		this.productos = productos;
+	}
+
+	public void setCliente(Usuario cliente) {
+		this.cliente = cliente;
+	}
+
 	public void setNumeroPedido(int numeroPedido) {
 		this.numeroPedido = numeroPedido;
 	}
@@ -75,18 +141,7 @@ public class Pedido {
 		this.comprobante = comprobante;
 	}
 	//CONSTRUCOR
-	
-	public Pedido(int numeroPedido, int numMesa) {
-		LocalDateTime ahora = LocalDateTime.now();
-		this.numeroPedido = numeroPedido;
-		this.fecha = String.valueOf(ahora.getDayOfMonth()) + "-" + String.valueOf(ahora.getMonthValue()) + "-" + String.valueOf(ahora.getYear());
-		this.hora = String.valueOf(ahora.getHour()) + ":" + String.valueOf(ahora.getMinute()) + ":" + String.valueOf(ahora.getSecond());
-		this.estadoPedido = "En proceso";
-		this.total = 0;
-		this.cajero = null;
-		this.cliente = new Cliente();
-		this.mesa = new Mesa(numMesa);
-	}
+
 	
 	public Pedido(int numeroPedido, String fecha, String hora, String estadoPedido, double total) {
 		super();
@@ -95,10 +150,6 @@ public class Pedido {
 		this.hora = hora;
 		this.estadoPedido = estadoPedido;
 		this.total = total;
-	}
-
-	public Pedido(int n) {
-	  this.mesa = new Mesa(n);
 	}
 
 	//TOSTRING

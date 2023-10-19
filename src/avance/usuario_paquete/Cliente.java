@@ -53,8 +53,8 @@ public class Cliente extends Usuario {
 
 	 public void regustraPedido() {
 	  System.out.println("Ingresé el número de mesa");
-	  Pedido pedido = new Pedido(Integer.valueOf(SC.next()));
-	  ArrayList<Producto> productos = pedido.getMesa().getProductos();
+	  Pedido pedido = new Pedido(001,Integer.valueOf(SC.next()));
+	  ArrayList<Producto> productos = pedido.getProductos();
 	}
 
 	@Override
