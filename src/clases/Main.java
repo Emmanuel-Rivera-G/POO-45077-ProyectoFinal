@@ -40,7 +40,7 @@ public class Main {
 		System.out.println(usuario1 + "\n" + comprobante);
 		
 		Empleado usuario2 = new Empleado("Nom", "Apell", "995", "noche");
-		usuario2.setCargo(new Mesero("001", "Ambiente", null, 0, 0));
+		usuario2.setCargo(new Cajero("001", "Ambiente", null, 0, 0));
 		System.out.println("--Ingresar Pedido 2-- \nIngrese el número de mesa: ");
 		Pedido pedido2 = new Pedido(sc.nextInt());
 		pedido2.registrarProductos();
@@ -51,10 +51,10 @@ public class Main {
 		/*System.out.println("Ingresa la propina del mesero");
 		usuario1.getCargo().setPropina(sc.next());*/
 		
-		usuario3 = new Cajero(null, null, null, 0, 0);
+		usuario3 = new Cajero(null, null, null, 0, 1000, 200);
 		System.out.println("Sueldo Cajero: " + usuario3.CalcularPagos());
 		
-		usuario3 = new Mesero(null, null, null, 0, 0);
+		usuario3 = new Mesero(null, null, null, 0, 1000, 150);
 		System.out.println("Sueldo Mesero: " + usuario3.CalcularPagos());
 	}
 
