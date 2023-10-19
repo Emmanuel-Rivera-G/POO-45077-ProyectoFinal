@@ -23,6 +23,19 @@ public class Pedido {
 	
 	public Pedido(int numeroPedido, int numMesa) {
 		LocalDateTime ahora = LocalDateTime.now();
+		this.numeroPedido = numeroPedido;
+		this.fecha = String.valueOf(ahora.getDayOfMonth()) + "-" + String.valueOf(ahora.getMonthValue()) + "-" + String.valueOf(ahora.getYear());
+		this.hora = String.valueOf(ahora.getHour()) + ":" + String.valueOf(ahora.getMinute()) + ":" + String.valueOf(ahora.getSecond());
+		this.estadoPedido = "En proceso";
+		this.total = 0;
+		this.cajero = null;
+		this.cliente = new Cliente();
+		this.mesa = new Mesa(numMesa);
+		this.productos = new ArrayList<Producto>();
+	}
+	
+	public Pedido(int numMesa) {
+		LocalDateTime ahora = LocalDateTime.now();
 		this.numeroPedido = (int)(Math.random()*100);
 		this.fecha = String.valueOf(ahora.getDayOfMonth()) + "-" + String.valueOf(ahora.getMonthValue()) + "-" + String.valueOf(ahora.getYear());
 		this.hora = String.valueOf(ahora.getHour()) + ":" + String.valueOf(ahora.getMinute()) + ":" + String.valueOf(ahora.getSecond());
@@ -32,7 +45,6 @@ public class Pedido {
 		this.cliente = new Cliente();
 		this.mesa = new Mesa(numMesa);
 		this.productos = new ArrayList<Producto>();
-		
 	}
 	
 	public void registrarProductos() {
