@@ -23,7 +23,7 @@ public class Pedido {
 	
 	public Pedido(int numeroPedido, int numMesa) {
 		LocalDateTime ahora = LocalDateTime.now();
-		this.numeroPedido = numeroPedido;
+		this.numeroPedido = (int)(Math.random()*100);
 		this.fecha = String.valueOf(ahora.getDayOfMonth()) + "-" + String.valueOf(ahora.getMonthValue()) + "-" + String.valueOf(ahora.getYear());
 		this.hora = String.valueOf(ahora.getHour()) + ":" + String.valueOf(ahora.getMinute()) + ":" + String.valueOf(ahora.getSecond());
 		this.estadoPedido = "En proceso";
@@ -31,38 +31,45 @@ public class Pedido {
 		this.cajero = null;
 		this.cliente = new Cliente();
 		this.mesa = new Mesa(numMesa);
+		this.productos = new ArrayList<Producto>();
 		
 	}
 	
 	public void registrarProductos() {
 		int i = 0;
-		String nomPro = "", tipo = "";
 		Producto p = null;
-		
+		boolean salida = false;
+		String nomPro = "", tipo = "";
 		do {
 			if (i == 0) {System.out.println("Registro de productos: ");}
 			
 			System.out.println("Ingrese el producto número " + ++i + " : ");
-			nomPro = SC.next();
-			System.out.println("Ingrese si es bebida o comida: ");
-			tipo = SC.next();
+			nomPro = "";
+			System.out.println("Ingrese si es Bebida o Comida: ");
+			tipo = SC.next().toLowerCase();
 			try {
 				switch (tipo) {
-				case "Bebida" : {
-					p = new Bebida(nomPro);
+					case "bebida" -> {
+						p = new Bebida(nomPro);
+					}
+					case "comida" -> {
+						p = new Comida(nomPro);
+					}
+					default ->
+						throw new IllegalArgumentException("Valor no permitido: " + tipo);
 				}
-				case "Comida" : {
-					p = new Comida(nomPro);
-				}
-				default:
-					throw new IllegalArgumentException("Valor no permitido: " + tipo);
-				}
+				
 			} catch (Exception e) {
 				
 			} finally {
-				productos.add(p);
+				try {
+					productos.add(p);
+				} catch (Exception e) {System.out.println("Error");i--;}
+				System.out.println("Para terminar escriba <stop> o <fin>\nPara continuar cualquier caracter: ");
+				String valor = SC.next().toLowerCase();
+				salida = (valor.equals("stop") || valor.equals("fin"));
 			}
-		} while(i < 5);
+		} while(!salida);
 	}
     
     //METODOS GET & SET

@@ -3,14 +3,14 @@ package clases;
 public class Almacen {
 
     private int cantidad;
-    private String fechaResepcio;
+    private String fechaResepcion;
     private String fechaVencimiento;
     private Producto productos[];
     
 	public Almacen(int cantidad, String fechaResepcio, String fechaVencimiento) {
 		super();
 		this.cantidad = cantidad;
-		this.fechaResepcio = fechaResepcio;
+		this.fechaResepcion = fechaResepcio;
 		this.fechaVencimiento = fechaVencimiento;
 	}
 
@@ -22,12 +22,12 @@ public class Almacen {
 		this.cantidad = cantidad;
 	}
 
-	public String getFechaResepcio() {
-		return fechaResepcio;
+	public String getFechaResepcion() {
+		return fechaResepcion;
 	}
 
-	public void setFechaResepcio(String fechaResepcio) {
-		this.fechaResepcio = fechaResepcio;
+	public void setFechaResepcion(String fechaResepcio) {
+		this.fechaResepcion = fechaResepcio;
 	}
 
 	public String getFechaVencimiento() {
