@@ -27,28 +27,31 @@ public class Main {
 		System.out.println(croissant.toString());
 		System.out.println(boleta1.toString());*/
 		
+		AccionesComprobante comprobante = null;
+		Pagos usuario3 = null;
+		
 		Empleado usuario1 = new Empleado("Nom", "Apell", "999", "mañana");
 		usuario1.setCargo(new Mesero("001", "Ambiente", null, 0, 0));
 		System.out.println("--Ingresar Pedido 1-- \nIngrese el número de mesa: ");
 		Pedido pedido1 = new Pedido(sc.nextInt());
 		pedido1.registrarProductos();
-		AccionesComprobante boleta = new BoletaVenta(001, null, null, 0, 0, false, pedido1, 001);
-		boleta.calcularTotal();
-		System.out.println(usuario1 + "\n" + boleta);
+		comprobante = new BoletaVenta(001, null, null, 0, 0, false, pedido1, 001);
+		comprobante.calcularTotal();
+		System.out.println(usuario1 + "\n" + comprobante);
 		
 		Empleado usuario2 = new Empleado("Nom", "Apell", "995", "noche");
 		usuario2.setCargo(new Mesero("001", "Ambiente", null, 0, 0));
 		System.out.println("--Ingresar Pedido 2-- \nIngrese el número de mesa: ");
 		Pedido pedido2 = new Pedido(sc.nextInt());
 		pedido2.registrarProductos();
-		AccionesComprobante factura = new FacturaVenta(0, null, null, 0, 0, false, pedido2, 0, 0);
-		factura.calcularTotal();
-		System.out.println(usuario2 + "\n" + factura);
+		comprobante = new FacturaVenta(0, null, null, 0, 0, false, pedido2, 0, 0);
+		comprobante.calcularTotal();
+		System.out.println(usuario2 + "\n" + comprobante);
 		
 		/*System.out.println("Ingresa la propina del mesero");
 		usuario1.getCargo().setPropina(sc.next());*/
 		
-		Pagos usuario3 = new Cajero(null, null, null, 0, 0);
+		usuario3 = new Cajero(null, null, null, 0, 0);
 		System.out.println("Sueldo Cajero: " + usuario3.CalcularPagos());
 		
 		usuario3 = new Mesero(null, null, null, 0, 0);
