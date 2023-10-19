@@ -1,6 +1,8 @@
 package avance;
 
-import java.util.ArrayList;
+import java.util.*;
+
+import avance.producto_paquete.Producto;
 
 public class Mesa {
     
@@ -29,13 +31,18 @@ public class Mesa {
 	public void setEstado(boolean estado) {
 		this.estado = estado;
 	}
-    //CONSTUCTOR
+	//CONSTUCTOR
 	public Mesa(int numeroMesa, int capasidad, boolean estado) {
 		super();
 		this.numeroMesa = numeroMesa;
 		this.capasidad = capasidad;
 		this.estado = estado;
 	}
+	public Mesa(int numeroMesa) {
+	  this.numeroMesa = numeroMesa;
+	}
+
+	
 	//TOSTRING
 	@Override
 	public String toString() {

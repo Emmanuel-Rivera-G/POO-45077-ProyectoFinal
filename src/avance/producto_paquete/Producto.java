@@ -9,7 +9,7 @@ public abstract class Producto {
 	protected String descripcion;
 	protected String codigo;
 	protected String ingredientes;
-
+	
 	// METODOS GET & SET
 	public String getNombre() {
 		return nombre;
@@ -57,7 +57,7 @@ public abstract class Producto {
 		this.nombre = nombre;
 		this.precio = precio;
 		this.descripcion = descripcion;
-		this.codigo = codigo;
+		this.codigo = "P_" + ((int)(Math.random()*100));
 		this.ingredientes = ingredientes;
 	}
 

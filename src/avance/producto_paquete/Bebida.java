@@ -10,6 +10,10 @@ public class Bebida extends Producto {
 	public Bebida() {
 
 	}
+	
+	public Bebida(String nombre) {
+		this.nombre = nombre;
+	}
 
 	public Bebida(String nombre, double precio, String descripcion, String codigo, String ingredientes,
 			String tipoBebida, double tamano) {
