@@ -15,7 +15,7 @@ public class Main {
   
 		Pedido pedido1 = new Pedido(001,"2023-09-12","15.00","En proceso",150.00);
   
-		Bebida cafe = new Bebida("Caf�", 15.00,"","00102","","Caliente",10.0);
+		Bebida cafe = new Bebida("Cafï¿½", 15.00,"","00102","","Caliente",10.0);
   
 		Comida croissant = new Comida("Croissant", 4.00,"","000101","","Pastel",5.0);
   
@@ -26,36 +26,40 @@ public class Main {
 		System.out.println(cafe.toString());
 		System.out.println(croissant.toString());
 		System.out.println(boleta1.toString());*/
-		
+	
 		AccionesComprobante comprobante = null;
 		Pagos usuario3 = null;
 		
-		Empleado usuario1 = new Empleado("Nom", "Apell", "999", "mañana");
-		usuario1.setCargo(new Mesero("001", "Ambiente", null, 0, 0));
-		System.out.println("--Ingresar Pedido 1-- \nIngrese el número de mesa: ");
+		Empleado usuario1 = new Empleado("Ricardo", "Sanches", "9988759", "Primero");
+		usuario1.setCargo(new Mesero("M001", "Salon", null, 8, 1200));
+		System.out.println("--Ingresar Pedido 1-- \nIngrese el nÃºmero de mesa: ");
 		Pedido pedido1 = new Pedido(sc.nextInt());
 		pedido1.registrarProductos();
-		comprobante = new BoletaVenta(001, null, null, 0, 0, false, pedido1, 001);
+		comprobante = new BoletaVenta(251, null, "Compras varias", 25, 0.18, false, pedido1, 001);
 		comprobante.calcularTotal();
 		System.out.println(usuario1 + "\n" + comprobante);
 		
-		Empleado usuario2 = new Empleado("Nom", "Apell", "995", "noche");
-		usuario2.setCargo(new Cajero("001", "Ambiente", null, 0, 0));
-		System.out.println("--Ingresar Pedido 2-- \nIngrese el número de mesa: ");
+		Empleado usuario2 = new Empleado("Fancisco", "Perez", "99587453", "segundo");
+		usuario2.setCargo(new Cajero("C001", "Caja 1", null, 8, 1200));
+		System.out.println("--Ingresar Pedido 2-- \nIngrese el nÃºmero de mesa: ");
 		Pedido pedido2 = new Pedido(sc.nextInt());
 		pedido2.registrarProductos();
-		comprobante = new FacturaVenta(0, null, null, 0, 0, false, pedido2, 0, 0);
+		comprobante = new FacturaVenta(267, null, "Compras Varias", 75, 0.18, false, pedido2, 5, 157568);
 		comprobante.calcularTotal();
 		System.out.println(usuario2 + "\n" + comprobante);
 		
 		/*System.out.println("Ingresa la propina del mesero");
 		usuario1.getCargo().setPropina(sc.next());*/
 		
-		usuario3 = new Cajero(null, null, null, 0, 1000, 200);
-		System.out.println("Sueldo Cajero: " + usuario3.CalcularPagos());
+		Pagos cargo = new Gerente("A001", "Oficinas", null, 8, 1250);
+		cargo.CalcularPagos();
+		System.out.println(cargo);
+		cargo = new Mesero("C002", "Salon", null, 8, 500,50);
+		cargo.CalcularPagos();
+		System.out.println(cargo);
 		
-		usuario3 = new Mesero(null, null, null, 0, 1000, 150);
-		System.out.println("Sueldo Mesero: " + usuario3.CalcularPagos());
+		
+		
 	}
 
 }
