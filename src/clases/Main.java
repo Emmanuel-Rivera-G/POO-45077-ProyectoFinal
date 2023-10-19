@@ -29,7 +29,7 @@ public class Main {
 		
 		Empleado usuario1 = new Empleado("Nom", "Apell", "999", "mañana");
 		usuario1.setCargo(new Mesero("001", "Ambiente", null, 0, 0));
-		System.out.println("--Ingresar Pedido-- \nIngrese el número de mesa: ");
+		System.out.println("--Ingresar Pedido 1-- \nIngrese el número de mesa: ");
 		Pedido pedido1 = new Pedido(sc.nextInt());
 		pedido1.registrarProductos();
 		AccionesComprobante boleta = new BoletaVenta(001, null, null, 0, 0, false, pedido1, 001);
@@ -38,7 +38,7 @@ public class Main {
 		
 		Empleado usuario2 = new Empleado("Nom", "Apell", "995", "noche");
 		usuario2.setCargo(new Mesero("001", "Ambiente", null, 0, 0));
-		System.out.println("--Ingresar Pedido-- \nIngrese el número de mesa: ");
+		System.out.println("--Ingresar Pedido 2-- \nIngrese el número de mesa: ");
 		Pedido pedido2 = new Pedido(sc.nextInt());
 		pedido2.registrarProductos();
 		AccionesComprobante factura = new FacturaVenta(0, null, null, 0, 0, false, pedido2, 0, 0);
@@ -48,12 +48,11 @@ public class Main {
 		/*System.out.println("Ingresa la propina del mesero");
 		usuario1.getCargo().setPropina(sc.next());*/
 		
-		Empleado usuario4 = new Empleado(null, null, null, null);
-		usuario4.setCargo(new Cajero(null, null, null, 0, 0));
+		Pagos usuario3 = new Cajero(null, null, null, 0, 0);
+		System.out.println("Sueldo Cajero: " + usuario3.CalcularPagos());
 		
-		
-		Pagos usuario3 = new Mesero(null, null, null, 0, 0);
-		usuario3.CalcularPagos();
+		usuario3 = new Mesero(null, null, null, 0, 0);
+		System.out.println("Sueldo Mesero: " + usuario3.CalcularPagos());
 	}
 
 }
