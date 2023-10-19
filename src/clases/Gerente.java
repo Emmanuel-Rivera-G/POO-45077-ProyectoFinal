@@ -2,7 +2,9 @@ package clases;
 
 import java.util.Date;
 
-public class Gerente extends Cargo{
+import interfaces.Pagos;
+
+public class Gerente extends Cargo implements Pagos{
 	//Atributos 
 	private double sueldo_gerente;
 	//Constuctores
@@ -21,5 +23,11 @@ public class Gerente extends Cargo{
 	}
 	public void setSueldo_gerente(double sueldo_gerente) {
 		this.sueldo_gerente = sueldo_gerente;
+	}
+	@Override
+	public double CalcularPagos() {
+		
+		
+		return 0;
 	}
 }

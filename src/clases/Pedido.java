@@ -56,9 +56,9 @@ public class Pedido {
 			if (i == 0) {System.out.println("Registro de productos: ");}
 			
 			System.out.println("Ingrese el producto número " + ++i + " : ");
-			nomPro = "";
+			nomPro = SC.nextLine().toLowerCase();
 			System.out.println("Ingrese si es Bebida o Comida: ");
-			tipo = SC.next().toLowerCase();
+			tipo = SC.nextLine().toLowerCase();
 			try {
 				switch (tipo) {
 					case "bebida" -> {
@@ -76,9 +76,12 @@ public class Pedido {
 			} finally {
 				try {
 					productos.add(p);
-				} catch (Exception e) {System.out.println("Error");i--;}
+				} catch (Exception e) {
+					System.out.println("Error");
+					i--;
+				}
 				System.out.println("Para terminar escriba <stop> o <fin>\nPara continuar cualquier caracter: ");
-				String valor = SC.next().toLowerCase();
+				String valor = SC.nextLine().toLowerCase();
 				salida = (valor.equals("stop") || valor.equals("fin"));
 			}
 		} while(!salida);

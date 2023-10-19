@@ -2,15 +2,14 @@ package clases;
 
 import java.util.Date;
 
-public class Cajero extends Cargo{
+import interfaces.Pagos;
+
+public class Cajero extends Cargo implements Pagos{
 	//Atributos
-	private double sueldo_base;
 	private double comisiones;
 	//Constructores
-	public Cajero(String cod_cargo, String ambiente, Date fecha_inicio, double hr_trabajo, double sueldo_base,
-			double sueldo_base2, double comisiones) {
+	public Cajero(String cod_cargo, String ambiente, Date fecha_inicio, double hr_trabajo, double sueldo_base, double comisiones) {
 		super(cod_cargo, ambiente, fecha_inicio, hr_trabajo, sueldo_base);
-		sueldo_base = sueldo_base2;
 		this.comisiones = comisiones;
 	}
 	public Cajero(String cod_cargo, String ambiente, Date fecha_inicio, double hr_trabajo, double sueldo_base) {
@@ -28,5 +27,10 @@ public class Cajero extends Cargo{
 	}
 	public void setComisiones(double comisiones) {
 		this.comisiones = comisiones;
+	}
+	@Override
+	public double CalcularPagos() {
+		double sueldoTotal = super.sueldo_base + this.comisiones;
+		return sueldoTotal;
 	}
 }

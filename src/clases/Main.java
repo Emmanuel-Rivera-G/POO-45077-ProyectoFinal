@@ -2,11 +2,15 @@ package clases;
 
 import java.time.LocalDateTime;
 import java.util.Date;
+import java.util.Scanner;
+
+import interfaces.*;
 
 public class Main {
 
 	public static void main(String[] args) {
-		Cliente cliente1 = new Cliente("Nombre","Apellido","987654321","direccion",
+		Scanner sc = new Scanner(System.in);
+		/*Cliente cliente1 = new Cliente("Nombre","Apellido","987654321","direccion",
 				"cliente1@ejemplo.com","123456789",2);
   
 		Pedido pedido1 = new Pedido(001,"2023-09-12","15.00","En proceso",150.00);
@@ -21,8 +25,35 @@ public class Main {
 		System.out.println(pedido1.toString());
 		System.out.println(cafe.toString());
 		System.out.println(croissant.toString());
-		System.out.println(boleta1.toString());
+		System.out.println(boleta1.toString());*/
 		
+		Empleado usuario1 = new Empleado("Nom", "Apell", "999", "mañana");
+		usuario1.setCargo(new Mesero("001", "Ambiente", null, 0, 0));
+		System.out.println("--Ingresar Pedido-- \nIngrese el número de mesa: ");
+		Pedido pedido1 = new Pedido(sc.nextInt());
+		pedido1.registrarProductos();
+		AccionesComprobante boleta = new BoletaVenta(001, null, null, 0, 0, false, pedido1, 001);
+		boleta.calcularTotal();
+		System.out.println(usuario1 + "\n" + boleta);
+		
+		Empleado usuario2 = new Empleado("Nom", "Apell", "995", "noche");
+		usuario2.setCargo(new Mesero("001", "Ambiente", null, 0, 0));
+		System.out.println("--Ingresar Pedido-- \nIngrese el número de mesa: ");
+		Pedido pedido2 = new Pedido(sc.nextInt());
+		pedido2.registrarProductos();
+		AccionesComprobante factura = new FacturaVenta(0, null, null, 0, 0, false, pedido2, 0, 0);
+		factura.calcularTotal();
+		System.out.println(usuario2 + "\n" + factura);
+		
+		/*System.out.println("Ingresa la propina del mesero");
+		usuario1.getCargo().setPropina(sc.next());*/
+		
+		Empleado usuario4 = new Empleado(null, null, null, null);
+		usuario4.setCargo(new Cajero(null, null, null, 0, 0));
+		
+		
+		Pagos usuario3 = new Mesero(null, null, null, 0, 0);
+		usuario3.CalcularPagos();
 	}
 
 }

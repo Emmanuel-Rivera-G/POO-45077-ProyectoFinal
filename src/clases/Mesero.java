@@ -2,7 +2,9 @@ package clases;
 
 import java.util.Date;
 
-public class Mesero extends Cargo{
+import interfaces.Pagos;
+
+public class Mesero extends Cargo implements Pagos{
 	//Atributos
 	private double Propina;
 	//Constructor
@@ -20,6 +22,11 @@ public class Mesero extends Cargo{
 	}
 	public void setPropina(double propina) {
 		Propina = propina;
+	}
+	@Override
+	public double CalcularPagos() {
+		double sueldoTotal = super.sueldo_base + this.Propina;
+		return sueldoTotal;
 	}
 	
 }
