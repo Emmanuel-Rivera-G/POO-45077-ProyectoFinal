@@ -1,46 +1,32 @@
-package avance.usuario_paquete;
-import java.util.*;
-public abstract class Usuario {
-    public Usuario() {
-    }
-    protected String dni;
-    protected String nombre;
-    protected String apellidoMaterno;
-    protected String apellidoPaterno;
-    protected String telefono;
-    protected String direccion;
-    protected String correo;
-	public Usuario(String nombre, String apellido, String telefono, String direccion, String correo) {
+public class Usuario {
+	//Atriburos
+	protected String nombre;
+	protected String apellido;
+	protected String telefono;
+	protected String correo;
+	//Constructores
+	public Usuario(String nombre, String apellido, String telefono, String correo) {
 		super();
-		this.nombre = nombre;
-		this.apellidoMaterno = apellido;
-		this.telefono = telefono;
-		this.direccion = direccion;
-		this.correo = correo;
+		this.nombre = null;
+		this.apellido = null;
+		this.telefono = null;
+		this.correo = null;
 	}
-	public String getDni() {
-		return dni;
+	public Usuario() {
+		super();
 	}
-	public void setDni(String dni) {
-		this.dni = dni;
-	}
+	//Metodos GET & SET
 	public String getNombre() {
 		return nombre;
 	}
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
-	public String getApellidoMaterno() {
-		return apellidoMaterno;
+	public String getApellido() {
+		return apellido;
 	}
-	public void setApellidoMaterno(String apellido) {
-		this.apellidoMaterno = apellido;
-	}
-	public String getApellidoPaterno() {
-		return apellidoPaterno;
-	}
-	public void setApellidoPaterno(String apellidoPaterno) {
-		this.apellidoPaterno = apellidoPaterno;
+	public void setApellido(String apellido) {
+		this.apellido = apellido;
 	}
 	public String getTelefono() {
 		return telefono;
@@ -48,22 +34,11 @@ public abstract class Usuario {
 	public void setTelefono(String telefono) {
 		this.telefono = telefono;
 	}
-	public String getDireccion() {
-		return direccion;
-	}
-	public void setDireccion(String direccion) {
-		this.direccion = direccion;
-	}
 	public String getCorreo() {
 		return correo;
 	}
 	public void setCorreo(String correo) {
 		this.correo = correo;
 	}
-	@Override
-	public String toString() {
-		return "Persona [nombre=" + nombre + ", apellido=" + apellidoMaterno + ", telefono=" + telefono + ", direccion="
-				+ direccion + ", correo=" + correo + "]";
-	}
-    
+	
 }
