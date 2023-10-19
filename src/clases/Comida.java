@@ -1,4 +1,4 @@
-package avance.producto_paquete;
+package clases;
 
 import java.util.*;
 

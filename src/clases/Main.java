@@ -1,8 +1,5 @@
-package avance;
+package clases;
 
-import avance.comprobante_paquete.*;
-import avance.producto_paquete.*;
-import avance.usuario_paquete.*;
 
 public class Main {
 
@@ -16,13 +13,13 @@ public class Main {
   
 		Comida croissant = new Comida("Croissant", 4.00,"","000101","","Pastel",5.0);
   
-		BoletaVenta boleta1 = new BoletaVenta(10000,"2023-09-12","",001,19.00);
+		//BoletaVenta boleta1 = new BoletaVenta(10000,"2023-09-12","",001,19.00);
 		
 		System.out.println(cliente1.toString());
 		System.out.println(pedido1.toString());
 		System.out.println(cafe.toString());
 		System.out.println(croissant.toString());
-		System.out.println(boleta1.toString());
+		//System.out.println(boleta1.toString());
 	}
 
 }

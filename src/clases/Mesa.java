@@ -1,8 +1,6 @@
-package avance;
+package clases;
 
 import java.util.*;
-
-import avance.producto_paquete.Producto;
 
 public class Mesa {
     

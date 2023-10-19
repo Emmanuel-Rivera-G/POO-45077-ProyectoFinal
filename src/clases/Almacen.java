@@ -1,6 +1,4 @@
-package avance;
-
-import avance.producto_paquete.Producto;
+package clases;
 
 public class Almacen {
 

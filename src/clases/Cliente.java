@@ -1,8 +1,5 @@
-package avance.usuario_paquete;
+package clases;
 import java.util.*;
-
-import avance.Pedido;
-import avance.producto_paquete.Producto;
 
 public class Cliente extends Usuario {
 
@@ -16,7 +13,7 @@ public class Cliente extends Usuario {
     }
 
     public Cliente(String nombre, String apellido, String telefono, String direccion, String correo,String dni, double vecesConsumo) {
-        super(nombre, apellido, telefono, direccion, correo);
+        //super(nombre, apellido, telefono, direccion, correo);
         this.dni = dni;
         this.vecesConsumo = vecesConsumo;
     }

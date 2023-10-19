@@ -1,17 +1,9 @@
-package avance;
+package clases;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.Scanner;
-
-import avance.cargo_paquete.Cajero;
-import avance.comprobante_paquete.ComprobanteVenta;
-import avance.producto_paquete.Bebida;
-import avance.producto_paquete.Comida;
-import avance.producto_paquete.Producto;
-import avance.usuario_paquete.Cliente;
-import avance.usuario_paquete.Usuario;
 
 public class Pedido {
     public Pedido() {

@@ -1,4 +1,4 @@
-package avance.producto_paquete;
+package clases;
 
 public abstract class Producto {
 	public Producto() {
