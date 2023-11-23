@@ -5,15 +5,15 @@ public class Empleado extends Usuario{
 	private Cargo cargo;
 	private String turno;
 	//Constuctores
-	public Empleado(String nombre, String apellido, String telefono, String correo, String cod_empleado, Cargo cargo,
+	public Empleado(String nombre, String apellido, String telefono, String correo, String dni, String cod_empleado, Cargo cargo,
 			String turno) {
-		super(nombre, apellido, telefono, correo);
+		super(nombre, apellido, telefono, correo, dni);
 		this.cod_empleado = cod_empleado;
 		this.cargo = cargo;
 		this.turno = turno;
 	}
-	public Empleado(String nombre, String apellido, String telefono, String correo) {
-		super(nombre, apellido, telefono, correo);
+	public Empleado(String nombre, String apellido, String usuario, String contrasena, String dni) {
+		super(nombre, apellido, usuario, contrasena, dni);
 	}
 	//Metodos GET & SET
 	public String getCod_empleado() {

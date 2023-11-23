@@ -9,7 +9,16 @@ public abstract class Producto {
 	protected String descripcion;
 	protected String codigo;
 	protected String ingredientes;
+	protected String imagen;
 	
+	public String getImagen() {
+		return imagen;
+	}
+
+	public void setImagen(String imagen) {
+		this.imagen = imagen;
+	}
+
 	// METODOS GET & SET
 	public String getNombre() {
 		return nombre;

@@ -30,7 +30,7 @@ public class Main {
 		AccionesComprobante comprobante = null;
 		Pagos usuario3 = null;
 		
-		Empleado usuario1 = new Empleado("Ricardo", "Sanches", "9988759", "Primero");
+		Empleado usuario1 = new Empleado("Ricardo", "Sanches","", "9988759", "Primero");
 		usuario1.setCargo(new Mesero("M001", "Salon", null, 8, 1200));
 		System.out.println("--Ingresar Pedido 1-- \nIngrese el nÃºmero de mesa: ");
 		Pedido pedido1 = new Pedido(sc.nextInt());
@@ -39,7 +39,7 @@ public class Main {
 		comprobante.calcularTotal();
 		System.out.println(usuario1 + "\n" + comprobante);
 		
-		Empleado usuario2 = new Empleado("Fancisco", "Perez", "99587453", "segundo");
+		Empleado usuario2 = new Empleado("Fancisco", "Perez","", "99587453", "segundo");
 		usuario2.setCargo(new Cajero("C001", "Caja 1", null, 8, 1200));
 		System.out.println("--Ingresar Pedido 2-- \nIngrese el nÃºmero de mesa: ");
 		Pedido pedido2 = new Pedido(sc.nextInt());
@@ -51,7 +51,7 @@ public class Main {
 		/*System.out.println("Ingresa la propina del mesero");
 		usuario1.getCargo().setPropina(sc.next());*/
 		
-		Pagos cargo = new Gerente("A001", "Oficinas", null, 8, 1250);
+		Pagos cargo = new Gerente("A001", "Oficinas", null, 8, 1250, 0);
 		cargo.CalcularPagos();
 		System.out.println(cargo);
 		cargo = new Mesero("C002", "Salon", null, 8, 500,50);
