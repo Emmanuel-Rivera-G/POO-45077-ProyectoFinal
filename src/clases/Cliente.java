@@ -3,7 +3,6 @@ import java.util.*;
 
 public class Cliente extends Usuario {
 
-    private String dni;
     private double vecesConsumo;
     private ArrayList<Pedido> pedidos;
     private final Scanner SC = new Scanner(System.in);
@@ -13,17 +12,12 @@ public class Cliente extends Usuario {
     }
 
     public Cliente(String nombre, String apellido, String telefono, String direccion, String correo,String dni, double vecesConsumo) {
-        //super(nombre, apellido, telefono, direccion, correo);
-        this.dni = dni;
+        super(nombre, apellido, telefono, direccion, correo, dni);
         this.vecesConsumo = vecesConsumo;
     }
-
-    public String getDni() {
-        return dni;
-    }
-
-    public void setDni(String dni) {
-        this.dni = dni;
+    
+    public Cliente(String nombre, String apellido, String dni, String usuario, String contrasena) {
+    	super(nombre, apellido, dni, usuario, contrasena);
     }
 
     public double getVecesConsumo() {
